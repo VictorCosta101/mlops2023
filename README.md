@@ -25,3 +25,5 @@ This repository provides a range of resources, tutorials, and practical examples
 Feel free to explore, contribute, and learn in this repository. Together, we'll deepen our understanding of MLOps, Machine Learning, and Python to create smart and effective solutions.
 
 Let's embark on this exciting journey! 🚀
+
+Certificate: https://app.dataquest.io/verify_cert/7NBUORTZDF3P9RC6W303/
