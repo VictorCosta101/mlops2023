@@ -26,4 +26,4 @@ Feel free to explore, contribute, and learn in this repository. Together, we'll 
 
 Let's embark on this exciting journey! 🚀
 
-Certificate: https://app.dataquest.io/verify_cert/7NBUORTZDF3P9RC6W303/
+Certificate: https://app.dataquest.io/view_cert/7NBUORTZDF3P9RC6W303
