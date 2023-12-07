@@ -47,10 +47,8 @@ def clean_data():
     
     train = pd.read_csv("train.csv")
     train = train.drop(['id', 'keyword', 'location'], axis = 1)
-    #test = pd.read_csv("test.csv")
-    ##data = pd.concat([train, test], axis=0)
-    ##data.to_csv("data_concatenated.csv", index=False)
     train.to_csv("train_cleaned.csv", index=False)
+    
 def remove_punctuation_and_number(text: str):
 
     return re.sub(r'[^a-zA-Z]', ' ', text)
@@ -224,7 +222,7 @@ with DAG(
     start_date = pendulum.datetime(2023,12,1),
     catchup = False
 ) as dag: 
-     with TaskGroup("Fetching_Data") as fetching_data:              
+     with TaskGroup("Loading_Data") as Loading_data:              
         download_train_data = PythonOperator(
                 task_id="download_train_data",
                 python_callable=download_data,
@@ -272,5 +270,5 @@ with DAG(
            
         )
         
-     fetching_data >> clean_data >> Text_Preprocessing >> Build_shallow_neural_network >> Build_Multilayer_Deep_Text_Classification_Model >> Building_Multilayer_bidirectional_lstm_model >> Building_tranformer_model
+     Loading_data >> clean_data >> Text_Preprocessing >> Build_shallow_neural_network >> Build_Multilayer_Deep_Text_Classification_Model >> Building_Multilayer_bidirectional_lstm_model >> Building_tranformer_model
     
